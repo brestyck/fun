@@ -1,7 +1,7 @@
 from time import sleep
 from math import sin, cos
 from os import system
-colors = ["\033[95m", "\033[93m", "\033[91m", "\033[92m", "\033[94m"]
+colors = ["\033[95m", "\033[36m", "\033[91m", "\033[92m", "\033[94m", "\033[45m"]
 p = 0
 c = 0
 SIZE = 60
@@ -25,9 +25,10 @@ def printscreen():
         
 
 AMPLIF = 1
+COLCODESDIV = len(colors) - 1
 while True:
     reset_scr()
-    print(colors[c%4], end="")
+    print(colors[c%COLCODESDIV], end="")
     for x in range(1, HORIZSIZE):
         innersin = ((sin( (x/10) + (p/10) )) + 1) / (2*AMPLIF)
         # print(innersin)
